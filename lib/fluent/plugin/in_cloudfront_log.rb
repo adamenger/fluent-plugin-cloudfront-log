@@ -24,6 +24,7 @@ class Fluent::Cloudfront_LogInput < Fluent::Input
     super
 
     raise Fluent::ConfigError.new unless @log_bucket
+    raise Fluent::ConfigError.new unless @log_prefix
     raise Fluent::ConfigError.new unless @region
 
     @moved_log_bucket = @log_bucket unless @moved_log_bucket
